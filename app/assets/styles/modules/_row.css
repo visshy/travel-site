@@ -1,0 +1,40 @@
+.row {
+                    /*    The below pseudo css selector "clearfix" will add the fake content and other attributes after the main 'row' div is closed. This is an alternative to using an empty div in the main index file after the 2 columns */
+    @mixin clearfix;
+    &--gutters {
+        margin-right: -65px;
+    }
+    &--gutters> div {
+                        /*will give padding of 65px after the image and also 65px after the content to the right*/
+        padding-right: 65px;
+    }
+    
+    &__b-margin-until-medium{
+            margin-bottom: 1rem;
+        }
+    
+    @mixin atMedium {
+        
+        &__b-margin-until-medium{
+            margin-bottom: 0;
+        }
+        
+        &__medium-4 {
+            float: left;
+            width: 33.33%
+        }
+        
+        &__medium-4--larger{
+            width: 37%;
+        }
+        
+        &__medium-8 {
+            float: left;
+            width: 66.66%;
+        }
+        
+        &__medium-8--smaller{
+            width: 63%;
+        }
+    }
+}
