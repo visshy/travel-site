@@ -2,3 +2,4 @@
 
 require('./gulp/tasks/styles'); //this is like importing of files
 require('./gulp/tasks/watch');  //this is like importing of files
+require('./gulp/tasks/sprites');  //this is like importing of files

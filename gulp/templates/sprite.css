@@ -1,0 +1,26 @@
+/*Do not edit modules/_sprite.css file directly as it is generated automatically by gulp. Instead gulp/templates/sprite.css*/
+
+{{#shapes}}
+{{#first}} 
+.icon{
+   background-image: url('/assets/images/sprites/{{{sprite}}}'); 
+}
+{{/first}}
+.icon--{{base}}{
+    width:{{width.outer}}px;
+    height:{{height.outer}}px;    
+    background-position: {{position.relative.xy}};
+}
+{{/shapes}}
+
+/*
+We are using 'sprite' variable on line no.5 because the sprite package automatically generates a random number in the svg file name in the temp folder everytime sprite is run.
+*/
+
+/*Also we are using 3 curly brackets on that line because 'sprite' variable will contain a forward slash telling it to go to the 'svg' folder and we do not want that forward slash character to be escaped. We want it to come through just as it is. */
+
+/*The position.relative.xy variable will give the exact position of a particular icon in the main merged svg file.*/
+
+/*Run 'gulp createSprite' and see the changes in sprite.css file in the temp folder*/
+
+/* code in 'first' will run only once will only run once and not repeat for all icons*/
