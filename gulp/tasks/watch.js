@@ -18,6 +18,10 @@ gulp.task('watch', function () {
     watch('./app/assets/styles/**/*.css', function () {
         gulp.start('cssInject'); // This will not begin until 'styles' task is complete
     });
+    
+    watch('./app/assets/scripts/**/*.js', function(){
+        gulp.start('scriptsRefresh');
+    });
 });
 
 
@@ -25,3 +29,7 @@ gulp.task('cssInject', ['styles'], function () { // the cssInject task will begi
     return gulp.src('./app/temp/styles/styles.css')
         .pipe(browserSync.stream()); //we are taking the contents of our compiled css file and hand it over to browserSync so that inject those styles onto the page on the fly
 });
+
+gulp.task('scriptsRefresh', ['scripts'], function(){
+    browserSync.reload();
+})
