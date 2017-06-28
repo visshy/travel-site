@@ -1,8 +1,11 @@
 module.exports = {
-    entry: "./app/assets/scripts/app.js",
+    entry: {
+        App: "./app/assets/scripts/app.js",
+        Vendor: "./app/assets/scripts/Vendor.js"
+    },
     output: {
         path: __dirname.replace('config', 'dist'),
-        filename: "./app/temp/scripts/app.js"
+        filename: "./app/temp/scripts/[name].js"
     },
     
     module:{
