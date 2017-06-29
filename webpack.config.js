@@ -1,3 +1,5 @@
+/*Webpack helps to bundle all the js files(entry) and convert it into 1 single file(output) which can be read by all browsers*/
+
 module.exports = {
     entry: {
         App: "./app/assets/scripts/app.js",
